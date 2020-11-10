@@ -17,6 +17,11 @@
             <groupId>com.itrip.346</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <artifactId>itripbeans</artifactId>
+            <groupId>com.itrip.346</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 

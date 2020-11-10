@@ -8,6 +8,7 @@ import cn.itrip.pojo.ItripUser;
 import cn.itrip.pojo.ItripUserVO;
 import com.alibaba.fastjson.JSONArray;
 
+import com.cloopen.rest.sdk.CCPRestSmsSDK;
 import cz.mallat.uasparser.UserAgentInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -70,7 +71,7 @@ public class HoltelContoller {
         //1000-9999
         int number=(int)(Math.random()*9000+1000);
 
-        /*sentsms(userVO.getUserCode(),""+number);*/
+        sentsms(userVO.getUserCode(),""+number);
 
         //把手机号和短信存入redis 中
         jredisApi.SetRedis(userVO.getUserCode(),""+number,7200);
@@ -81,8 +82,7 @@ public class HoltelContoller {
     }
 
 
-   /* public static void sentsms(String phone,String sms)
-    {
+    public static void sentsms(String phone,String sms) {
         HashMap<String, Object> result = null;
 
         //初始化SDK
@@ -123,29 +123,29 @@ public class HoltelContoller {
         //*result = restAPI.sendTemplateSMS("13800000000","1" ,new String[]{"6532","5"});																		  *
         //*则13800000000手机号收到的短信内容是：【云通讯】您使用的是云通讯短信模板，您的验证码是6532，请于5分钟内正确输入     *
         //*********************************************************************************************************************
-        result = restAPI.sendTemplateSMS("15210254693","1" ,new String[]{sms,"1"});
+        result = restAPI.sendTemplateSMS("15210254693", "1", new String[]{sms, "1"});
 
         System.out.println("SDKTestGetSubAccounts result=" + result);
-        if("000000".equals(result.get("statusCode"))){
+        if ("000000".equals(result.get("statusCode"))) {
             //正常返回输出data包体信息（map）
-            HashMap<String,Object> data = (HashMap<String, Object>) result.get("data");
+            HashMap<String, Object> data = (HashMap<String, Object>) result.get("data");
             Set<String> keySet = data.keySet();
-            for(String key:keySet){
+            for (String key : keySet) {
                 Object object = data.get(key);
-                System.out.println(key +" = "+object);
+                System.out.println(key + " = " + object);
 
             }
 
 
-        }else{
+        } else {
             //异常返回输出错误码和错误信息
-            System.out.println("错误码=" + result.get("statusCode") +" 错误信息= "+result.get("statusMsg"));
+            System.out.println("错误码=" + result.get("statusCode") + " 错误信息= " + result.get("statusMsg"));
 
 
-        }*/
+        }
 
 
-
+    }
     @ApiImplicitParams({
             @ApiImplicitParam(paramType="query",required=true,value="用户名",name="name",defaultValue="itrip@163.com"),
             @ApiImplicitParam(paramType="query",required=true,value="密码",name="password",defaultValue="123456"),

@@ -42,11 +42,6 @@
             <version>5.2.4.Final</version>
         </dependency>
 
-       <!-- <dependency>
-            <groupId>cn</groupId>
-            <artifactId>sms</artifactId>
-            <version>1.0.0</version>
-        </dependency>-->
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
@@ -157,6 +152,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>java-sms-sdk</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>4.1.7.RELEASE</version>
@@ -247,7 +247,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>19.0</version>
+            <version>20.0</version>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -292,21 +292,7 @@
         </dependency>
 
 
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson.verson}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson.verson}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>${jackson.verson}</version>
-    </dependency>
+
 
 
     </dependencies>
