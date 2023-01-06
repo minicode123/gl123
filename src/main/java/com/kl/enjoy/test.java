@@ -12,4 +12,5 @@ public class test {
         List<String> list= Arrays.asList(args);
         System.out.println(list.size());
     }
+
 }
